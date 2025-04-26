@@ -188,3 +188,4 @@ curl -X GET http://localhost:3000/api/reports/inventory-summary \
 ```
 
 ## Lisensi
+By: Si Paling Pintar Sedunia
