@@ -1,6 +1,7 @@
 const { Item, Category, Supplier } = require("../models");
-const { sequelize } = require("../utils/database");
+const { sequelize } = require("../config/sequelize");
 const { QueryTypes } = require("sequelize");
+const { Op } = require("sequelize");
 
 exports.getInventorySummary = async (req, res) => {
   try {

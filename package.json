@@ -7,6 +7,8 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "seed": "node src/seeders/demo-data.js",
+    "seed:undo": "node src/seeders/undo-seed.js",
+    "seed:reset": "npm run seed:undo && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

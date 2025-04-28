@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { Admin } = require("../models");
+const { Op } = require("sequelize");
 require("dotenv").config();
 
 exports.register = async (req, res) => {

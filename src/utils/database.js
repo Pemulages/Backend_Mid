@@ -32,7 +32,6 @@ const testConnection = async () => {
         error
       );
       retries -= 1;
-      // Tunggu selama 5 detik sebelum mencoba lagi
       await new Promise((resolve) => setTimeout(resolve, 5000));
     }
   }

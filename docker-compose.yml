@@ -1,5 +1,4 @@
 services:
-  # Database
   db:
     image: postgres:15.3-alpine
     container_name: inventory-db
@@ -20,7 +19,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # Utk aplikasi backendny
   app:
     build: .
     container_name: inventory-app

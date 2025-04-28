@@ -2,17 +2,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./routes");
-const { sequelize, testConnection } = require("./utils/database");
+const { testConnection } = require("./utils/database");
+const { sequelize } = require("../config/sequelize");
 require("dotenv").config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Utk ngetest route
 app.get('/test', (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -20,7 +19,6 @@ app.get('/test', (req, res) => {
   });
 });
 
-// Utk coba welcome route
 app.get('/', (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -28,12 +26,9 @@ app.get('/', (req, res) => {
   });
 });
 
-// Routes
 app.use(routes);
-// Routes
 app.use(routes);
 
-// 404 handler
 app.use((req, res) => {
   res.status(404).json({
     status: "error",
@@ -41,7 +36,6 @@ app.use((req, res) => {
   });
 });
 
-// Error handler
 app.use((err, req, res, next) => {
   console.error(err);
 
@@ -51,19 +45,15 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Sinkronisasi database dan memulai server
 const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
-    // Test database connection
     await testConnection();
 
-    // Uji koneksi database
     await sequelize.sync({ alter: true });
     console.log("Database sync complete");
 
-    // Start server
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });

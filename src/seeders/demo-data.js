@@ -1,14 +1,12 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { Admin, Category, Supplier, Item } = require("../models");
-const { sequelize } = require("../utils/database");
+const { sequelize } = require("../config/sequelize");
 
 const seedDatabase = async () => {
   try {
-    // Hapus data yang ada
     await sequelize.sync({ force: true });
     console.log("Database cleared");
 
-    // Membuat utk admin
     const adminPassword = await bcrypt.hash("admin1234", 10);
     const admin = await Admin.create({
       username: "admin",
@@ -17,7 +15,6 @@ const seedDatabase = async () => {
     });
     console.log("Admin created");
 
-    // Mmbuat kategori
     const categories = await Category.bulkCreate([
       {
         name: "Elektronik",
@@ -37,7 +34,6 @@ const seedDatabase = async () => {
     ]);
     console.log("Kategori telah dibuat");
 
-    // Mmbuat pemasok
     const suppliers = await Supplier.bulkCreate([
       {
         name: "Teknisi",
@@ -57,7 +53,6 @@ const seedDatabase = async () => {
     ]);
     console.log("Pemasok telah dibuat");
 
-    // Mmbuat item
     await Item.bulkCreate([
       {
         name: "Laptop",

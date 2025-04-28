@@ -56,8 +56,8 @@ API akan tersedia di `http://localhost:3000`
 
 ## Kredensial Admin Default
 
-- **Usernam**: admin
-- **Password**: admin1234
+- **Username**: admin2
+- **Password**: admin
 
 ## Dokumentasi API
 
@@ -152,7 +152,7 @@ API akan tersedia di `http://localhost:3000`
 ```bash
 curl -X POST http://localhost:3000/api/admins/login \
   -H "Content-Type: application/json" \
-  -d '{"username": "admin", "password": "admin1234"}'
+  -d '{"username": "admin2", "password": "admin"}'
 ```
 
 ### Membuat Kategori
