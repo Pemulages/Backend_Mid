@@ -191,4 +191,4 @@ curl -X GET http://localhost:3000/api/reports/inventory-summary \
 ```
 
 ## Lisensi
-By: Si Paling Pintar Sedunia
+By: Abdurrazzaq Ilham Aziz A11.2022.14301
