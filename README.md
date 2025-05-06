@@ -1,5 +1,8 @@
 # Inventory Management
 
+NAMA  : Abdurrazzaq Ilham Aziz
+NIM   : A11.2022.14301
+
 Aplikasi pengelolaan persediaan barang toko yang lengkap, dengan fitur pengelolaan produk, kategori, pemasok, dan administrator yang bertanggung jawab atas manajemen data.
 
 ## Gambaran Umum Proyek
